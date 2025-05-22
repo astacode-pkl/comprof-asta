@@ -4,103 +4,238 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Astacode</title>
-    <link rel="stylesheet" href="./output.css" />
-    <script src="./node_modules/preline/dist/preline.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <style>
+      .hero-section {
+        position: relative;
+        height: 200px;
+        margin-top: 4rem;
+      }
+      
+      @media (min-width: 576px) {
+        .hero-section {
+          height: 250px;
+          margin-top: 0;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .hero-section {
+          height: 300px;
+        }
+      }
+      
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+      
+      .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 20;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .hero-title {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        margin-bottom: 0.5rem;
+      }
+      
+      @media (min-width: 576px) {
+        .hero-title {
+          font-size: 1.875rem;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .hero-title {
+          font-size: 2.25rem;
+        }
+      }
+      
+      .hero-subtitle {
+        color: #e5e7eb;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        max-width: 36rem;
+        margin: 0 auto;
+      }
+      
+      @media (min-width: 576px) {
+        .hero-subtitle {
+          font-size: 1rem;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .hero-subtitle {
+          font-size: 1.125rem;
+        }
+      }
+      
+      .contact-section {
+        background-color: #f8f9fa;
+        padding: 2.5rem 0;
+      }
+      
+      .contact-card {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      
+      .contact-label {
+        font-size: 0.875rem;
+        color: #6b7280;
+        font-weight: 500;
+      }
+      
+      .contact-value {
+        color: #1f2937;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      
+      .social-icon {
+        background-color: #111827;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        margin-right: 0.75rem;
+        transition: background-color 0.3s;
+      }
+      
+      .social-icon:hover {
+        background-color: #374151;
+      }
+      
+      .social-icon i {
+        color: white;
+        font-size: 0.75rem;
+      }
+      
+      .map-container {
+        position: relative;
+        width: 100%;
+        height: 280px;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+      
+      .map-iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
   </head>
 
   <body>
-    <!-- Nav -->
     <div id="navbar-container"></div>
-
-    <!-- Hero Section -->
-    <div class="relative h-[300px] w-full">
+    <div class="hero-section">
       <img
         src="assets/img/bgcontact.jpg"
         alt="Contact Us"
-        class="absolute inset-0 w-full h-full object-cover"
+        class="hero-bg"
       />
-
-      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-      <div
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 text-center px-4"
-      >
-        <h1 class="text-white text-4xl font-bold drop-shadow-md">Contact Us</h1>
-        <p
-          class="text-gray-200 text-base sm:text-lg font-medium drop-shadow-sm"
-        >
+      <div class="hero-overlay"></div>
+      <div class="hero-content px-3 px-sm-4 px-md-5">
+        <h1 class="hero-title">
+          Contact Us
+        </h1>
+        <p class="hero-subtitle">
           Get in touch and ask us anything
         </p>
       </div>
     </div>
 
-    <section class="bg-gray-50 py-10">
-      <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Contact Info -->
-        <div class="bg-white p-6 rounded-xl shadow-sm overflow-hidden">
-          <h2 class="text-lg font-semibold mb-4">Call us</h2>
-          <p class="text-sm text-gray-500 font-medium">Phone</p>
-          <p class="mb-2 text-gray-800 font-semibold">+62 822 4245 5535</p>
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Contact Info -->
+          <div class="col-12 col-md-6">
+            <div class="contact-card">
+              <h2 class="h5 fw-semibold mb-3">Call us</h2>
+              
+              <p class="contact-label">Phone</p>
+              <p class="contact-value">+62 822 4245 5535</p>
 
-          <p class="text-sm text-gray-500 font-medium">Email</p>
-          <p class="mb-2 text-gray-800 font-semibold">info@astacode.com</p>
+              <p class="contact-label">Email</p>
+              <p class="contact-value">info@astacode.com</p>
 
-          <p class="text-sm text-gray-500 font-medium">Address</p>
-          <p class="text-gray-800 font-semibold">
-            Parakannyasag, Indihiang, Tasikmalaya Regency,<br />
-            West Java 46151
-          </p>
+              <p class="contact-label">Address</p>
+              <p class="contact-value">
+                Parakannyasag, Indihiang, Tasikmalaya Regency,<br />
+                West Java 46151
+              </p>
 
-          <div class="flex items-center gap-3 mt-4">
-            <a
-              href="#"
-              aria-label="Facebook"
-              class="bg-gray-900 hover:bg-gray-800 rounded-full w-7 h-7 flex items-center justify-center"
-            >
-              <i class="fab fa-facebook-f text-white text-xs"></i>
-            </a>
-            <a
-              href="#"
-              aria-label="YouTube"
-              class="bg-gray-900 hover:bg-gray-800 rounded-full w-7 h-7 flex items-center justify-center"
-            >
-              <i class="fab fa-youtube text-white text-xs"></i>
-            </a>
-            <a
-              href="#"
-              aria-label="Instagram"
-              class="bg-gray-900 hover:bg-gray-800 rounded-full w-7 h-7 flex items-center justify-center"
-            >
-              <i class="fab fa-instagram text-white text-xs"></i>
-            </a>
+              <div class="d-flex align-items-center mt-3">
+                <a href="#" class="social-icon" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="YouTube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <!-- Google Maps -->
-        <div class="bg-white p-6 rounded-xl shadow-sm overflow-hidden">
-          <div class="relative w-full h-[280px] rounded-lg overflow-hidden">
-            <iframe
-              class="absolute inset-0 w-full h-full border-0"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.4257304940293!2d108.21170027442564!3d-7.305974871826322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f510066bcbad9%3A0x7d31538e112bd70!2sASTACODE%20MANAGEMENT!5e0!3m2!1sid!2sid!4v1746499817979!5m2!1sid!2sid"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <!-- Google Maps -->
+          <div class="col-12 col-md-6">
+            <div class="contact-card">
+              <div class="map-container">
+                <iframe
+                  class="map-iframe"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.4257304940293!2d108.21170027442564!3d-7.305974871826322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f510066bcbad9%3A0x7d31538e112bd70!2sASTACODE%20MANAGEMENT!5e0!3m2!1sid!2sid!4v1746499817979!5m2!1sid!2sid"
+                  width="600"
+                  height="450"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- footer -->
+    <!-- Footer -->
     <div id="footer-container"></div>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/components.js"></script>
   </body>
 </html>

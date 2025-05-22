@@ -1,93 +1,187 @@
-</html>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Astacode</title>
-    <link rel="stylesheet" href="./output.css" />
-    <script src="./node_modules/preline/dist/preline.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Astacode - Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    </head>
+    <style>
+      body {
+        padding-top: 70px; 
+      }
+      
+      .hero-section {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+      
+      @media (min-width: 576px) {
+        .hero-section {
+          height: 250px;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .hero-section {
+          height: 300px;
+        }
+        body {
+          padding-top: 0;
+        }
+      }
+      
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+      
+      .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 20;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .service-card {
+        background: white;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      
+      .service-card img {
+        width: 172px;
+        height: 172px;
+        object-fit: contain;
+      }
+      
+      .bg-gray-50 {
+        background-color: #f9fafb;
+      }
+      
+      .text-gray-300 {
+        color: #d1d5db;
+      }
+      
+      .text-gray-500 {
+        color: #6b7280;
+      }
+      
+      .text-gray-900 {
+        color: #111827;
+      }
+    </style>
+  </head>
 
-        <body>
-               <!-- Nav -->
-               <div id="navbar-container"></div>
-
-
-           <!-- Hero Section -->
-           <div class="relative h-[300px] w-full">
-            <img src="assets/img/bgservice.jpg" alt="servce" class="absolute inset-0 w-full h-full object-cover" />
-          
-            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 text-center px-4">
-              <h1 class="text-white text-4xl font-bold drop-shadow-md">Our services in astacode</h1>
-              <p class="text-gray-300 text-base font-normal">
-                Their strategic roadmap helped us reduce IT costs by 30% while improving system performance.
+  <body>
+    <div id="navbar-container"></div>
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <img 
+        src="assets/img/bgservice.jpg" 
+        alt="service" 
+        class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" 
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-content px-3 px-sm-4 px-md-5">
+        <h1 class="text-white display-5 display-md-4 fw-bold mb-2 mb-sm-3" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+          Our services in astacode
+        </h1>
+        <p class="text-gray-300 fs-6 fs-sm-5 fw-normal mx-auto" style="max-width: 36rem;">
+          Their strategic roadmap helped us reduce IT costs by 30% while improving system performance.
+        </p>
+      </div>
+    </div>
+        
+    <!-- Services Section -->
+    <section class="bg-gray-50 py-5">
+      <div class="container-fluid px-3 px-sm-4 px-lg-5">
+        <div class="row">
+          <div class="col-12">
+            <div class="text-start mb-5">
+              <p class="h4 h-sm-3 h-md-2 fw-semibold lh-base text-gray-900">
+                No need to start from scratch. Get a head<br class="d-none d-sm-block">
+                start on building your perfect workflow<br class="d-none d-sm-block">
+                and experience the magic of automation in<br class="d-none d-sm-block"> minutes.
               </p>
             </div>
-          </div>
-
-          
-          <section class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto">
-              <!-- Heading -->
-              <div class="text-left mb-10">
-                <p class="text-lg sm:text-xl md:text-2xl font-semibold leading-relaxed text-gray-900 max-w-2xl">
-                  No need to start from scratch. Get a head <br>
-                  start on building your perfect workflow <br>
-                   and experience the magic of automation in <br> minutes.</p>
-              </div>
-          
-              <!-- Cards -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between h-full">
+        
+            <!-- Cards -->
+            <div class="row g-4">
+              <!-- Card 1 -->
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="service-card">
                   <div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">IT Strategy &amp; Planning</h3>
-                    <p class="text-sm leading-relaxed text-gray-500">
-                      We create tailored IT strategies to align <br>
-                      technology with your business goals, ensuring <br>
+                    <h3 class="fs-5 fw-semibold text-gray-900 mb-2">IT Strategy &amp; Planning</h3>
+                    <p class="small lh-base text-gray-500">
+                      We create tailored IT strategies to align<br class="d-none d-lg-block">
+                      technology with your business goals, ensuring<br class="d-none d-lg-block">
                       efficiency, scalability, and long-term success.
                     </p>
                   </div>
-                  <div class="flex justify-center mt-6">
-                    <img src="assets/img/service/1.png" alt="IT Strategy & Planning" class="w-43 h-43 object-contain" />
+                  <div class="d-flex justify-content-center mt-4">
+                    <img src="assets/img/service/1.png" alt="IT Strategy & Planning" />
                   </div>
                 </div>
-              
-                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between h-full">
+              </div>
+            
+              <!-- Card 2 -->
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="service-card">
                   <div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Cloud Solution</h3>
-                    <p class="text-sm leading-relaxed text-gray-500">
-                       We create tailored IT strategies to align <br>
-                      technology with your business goals, ensuring <br>
-                      efficiency, scalability, and long-term success.</p>
+                    <h3 class="fs-5 fw-semibold text-gray-900 mb-2">Cloud Solution</h3>
+                    <p class="small lh-base text-gray-500">
+                      We create tailored IT strategies to align<br class="d-none d-lg-block">
+                      technology with your business goals, ensuring<br class="d-none d-lg-block">
+                      efficiency, scalability, and long-term success.
+                    </p>
                   </div>
-                  <div class="flex justify-center mt-6">
-                    <img src="assets/img/service/2.png" alt="Cloud Solution" class="w-43 h-43 object-contain" />
+                  <div class="d-flex justify-content-center mt-4">
+                    <img src="assets/img/service/2.png" alt="Cloud Solution" />
                   </div>
                 </div>
-              
-                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between h-full">
+              </div>
+            
+              <!-- Card 3 -->
+              <div class="col-12 col-sm-6 col-md-4">
+                <div class="service-card">
                   <div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Managed IT Services</h3>
-                    <p class="text-sm leading-relaxed text-gray-500">
-                      We create tailored IT strategies to align <br>
-                      technology with your business goals, ensuring <br>
-                      efficiency, scalability, and long-term success.</p>
+                    <h3 class="fs-5 fw-semibold text-gray-900 mb-2">Managed IT Services</h3>
+                    <p class="small lh-base text-gray-500">
+                      We create tailored IT strategies to align<br class="d-none d-lg-block">
+                      technology with your business goals, ensuring<br class="d-none d-lg-block">
+                      efficiency, scalability, and long-term success.
+                    </p>
                   </div>
-                  <div class="flex justify-center mt-6">
-                    <img src="assets/img/service/3.png" alt="Managed IT Services" class="w-43 h-43 object-contain" />
+                  <div class="d-flex justify-content-center mt-4">
+                    <img src="assets/img/service/3.png" alt="Managed IT Services" />
                   </div>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-         <!-- footer -->
-         <div id="footer-container"></div>
+    <!-- footer -->
+    <div id="footer-container"></div>
 
-         <script src="js/components.js"></script> 
-          </body>
-          </html>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components.js"></script> 
+  </body>
+</html>

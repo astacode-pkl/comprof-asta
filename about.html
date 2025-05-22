@@ -4,15 +4,18 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Astacode</title>
-        <link rel="stylesheet" href="./output.css" />
-        <script src="./node_modules/preline/dist/preline.js"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
         
         <style>
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+          }
+          
           .grid-bg {
             position: relative;
           }
+          
           .grid-bg::before {
             content: '';
             position: absolute;
@@ -28,131 +31,448 @@
             opacity: 0.4;
             pointer-events: none;
           }
+          
+          .hero-section {
+            background-color: white;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin-top: 4rem;
+          }
+          
+          @media (min-width: 768px) {
+            .hero-section {
+              padding-top: 4rem;
+              padding-bottom: 4rem;
+              margin-top: 2.5rem;
+            }
+          }
+          
+          .hero-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: -0.025em;
+            color: #111827;
+          }
+          
+          @media (min-width: 576px) {
+            .hero-title {
+              font-size: 1.5rem;
+            }
+          }
+          
+          @media (min-width: 768px) {
+            .hero-title {
+              font-size: 1.875rem;
+            }
+          }
+          
+          .hero-description {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: #4b5563;
+          }
+          
+          @media (min-width: 768px) {
+            .hero-description {
+              font-size: 1rem;
+            }
+          }
+          
+          .hero-image {
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 10;
+          }
+          
+          .hero-image-container {
+            margin-bottom: 3rem;
+          }
+          
+          @media (min-width: 768px) {
+            .hero-image-container {
+              margin-bottom: 7rem;
+            }
+          }
+          
+          .team-section {
+            position: relative;
+            background-color: #f9fafb;
+            padding-top: 16rem;
+            padding-bottom: 5rem;
+            margin-top: 2.5rem;
+          }
+          
+          @media (min-width: 576px) {
+            .team-section {
+              padding-top: 20rem;
+            }
+          }
+          
+          @media (min-width: 768px) {
+            .team-section {
+              padding-top: 28rem;
+              padding-bottom: 10rem;
+            }
+          }
+          
+          .team-grid-container {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -6rem;
+            z-index: 30;
+          }
+          
+          .team-member {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+          }
+          
+          .team-image {
+            width: 10rem;
+            height: 10rem;
+            object-fit: cover;
+            margin: 0 auto;
+            border-radius: 0.5rem;
+          }
+          
+          @media (min-width: 576px) {
+            .team-image {
+              width: 12rem;
+              height: 12rem;
+            }
+          }
+          
+          @media (min-width: 768px) {
+            .team-image {
+              width: 15rem;
+              height: 15rem;
+            }
+          }
+          
+          .team-name {
+            margin-top: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1f2937;
+          }
+          
+          @media (min-width: 768px) {
+            .team-name {
+              font-size: 1.125rem;
+            }
+          }
+          
+          .team-position {
+            font-size: 0.875rem;
+            color: #6b7280;
+          }
+          
+          .team-info {
+            font-size: 0.75rem;
+            color: #9ca3af;
+          }
+          
+          .why-choose-section {
+            background-color: white;
+            color: #1f2937;
+            margin-top: 35rem;
+            
+          }
+          
+          @media (min-width: 768px) {
+            .why-choose-section {
+              margin-top: 5%;
+            }
+          }
+          
+          .section-container {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+          }
+          
+          @media (min-width: 768px) {
+            .section-container {
+              padding: 4rem 1.5rem;
+            }
+          }
+          
+          .section-header {
+            text-align: center;
+            max-width: 36rem;
+            margin: 0 auto;
+          }
+          
+          .section-title {
+            color: #111827;
+            font-weight: 600;
+            font-size: 1.125rem;
+            line-height: 1.5;
+          }
+          
+          @media (min-width: 768px) {
+            .section-title {
+              font-size: 1.25rem;
+            }
+          }
+          
+          .section-subtitle {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+          }
+          
+          .features-grid {
+            margin-top: 2rem;
+            max-width: 80rem;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          
+          @media (min-width: 768px) {
+            .features-grid {
+              margin-top: 3rem;
+            }
+          }
+          
+          .feature-card {
+            background-color: #f9fafb;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            transition: box-shadow 0.3s;
+          }
+          
+          @media (min-width: 576px) {
+            .feature-card {
+              padding: 1.5rem;
+            }
+          }
+          
+          .feature-card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          }
+          
+          .feature-number {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+          }
+          
+          .feature-title {
+            color: #111827;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+          }
+          
+          .feature-description {
+            color: #6b7280;
+            font-size: 0.75rem;
+            line-height: 1.625;
+          }
+          
+          .cta-section {
+            margin-top: 3rem;
+            max-width: 36rem;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            padding: 0 1rem;
+          }
+          
+          @media (min-width: 768px) {
+            .cta-section {
+              margin-top: 4rem;
+            }
+          }
+          
+          .cta-text {
+            color: #111827;
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.375;
+          }
+          
+          .cta-button {
+            margin-top: 1rem;
+            background-color: #1d4ed8;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            border: none;
+            transition: background-color 0.3s;
+            width: 100%;
+          }
+          
+          @media (min-width: 576px) {
+            .cta-button {
+              width: auto;
+              margin-top: 1.5rem;
+            }
+          }
+          
+          @media (min-width: 768px) {
+            .cta-button {
+              margin-top: 1.5rem;
+            }
+          }
+          
+          .cta-button:hover {
+            background-color: #1e40af;
+          }
         </style>
-        </head>
+    </head>
 
-        <body >
-             <!-- Nav -->
-             <div id="navbar-container"></div>           
-  
-<!-- Section Hero -->
-<div class="bg-white py-16 md:py-24">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center">
-    <div>
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">We Prominent Truly Trusted. We <br> will adjust the price you submit, <br> but still with the best results</h2>
-      <p class="mt-4 text-sm md:text-base text-gray-600">
-        Meet our growing family. We’re a rapidly expanding group of <br>  software engineering consultancy firms that deliver remarkable <br> tailor-made software solutions. Our success is rooted in our <br> technical expertise, whether we collaborate closely or <br> work independently, showcasing our versatility and commitment <br> to excellence.</p>
-    </div>
-    
-    <div class="grid-bg relative z-10 mb-28">
-      <img src="assets/img/team/pp.png" alt="Team Photo" class="relative z-10 rounded-xl shadow-lg w-full h-auto">
-    </div>
-  </div>
-</div>
+    <body>
+        <div id="navbar-container"></div>           
+        <!-- Section Hero -->
+        <div class="hero-section">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-12 col-md-6 text-center text-md-start">
+                        <h2 class="hero-title">
+                            We Prominent Truly Trusted. We will adjust the price you submit, but still with the best results
+                        </h2>
+                        <p class="hero-description">
+                            Meet our growing family. We're a rapidly expanding group of software engineering consultancy firms that deliver remarkable tailor-made software solutions. Our success is rooted in our technical expertise, whether we collaborate closely or work independently, showcasing our versatility and commitment to excellence.
+                        </p>
+                    </div>
+                    
+                    <div class="col-12 col-md-6">
+                        <div class="grid-bg hero-image-container position-relative">
+                            <img src="assets/img/team/pp.png" alt="Team Photo" class="hero-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!-- Team -->  
-<div class="relative bg-gray-50 pt-[28rem] pb-40  "> 
-  <div class="absolute inset-x-0 -top-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-30">
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10 text-center">
-      <!-- 1 -->
-      <div>
-        <img src="assets/img/team/1.png" alt="Member" class="w-60 h-60 object-cover mx-auto" />
-        <h3 class="mt-4 text-lg font-semibold text-gray-800">Galih Pangestu</h3>
-        <p class="text-sm text-gray-500">Chief Executive Officer</p>
-        <p class="text-xs text-gray-400"> CEO</p>
-      </div>
+        <!-- Team -->  
+        <div class="team-section"> 
+            <div class="team-grid-container">
+                <div class="container">
+                    <div class="row g-3 g-sm-4 g-md-5">
+                        <!-- Team members -->
+                        <div class="col-6 col-md-4">
+                            <div class="team-member">
+                                <img src="assets/img/team/1.png" alt="Member" class="team-image" />
+                                <h3 class="team-name">Galih Pangestu</h3>
+                                <p class="team-position">Chief Executive Officer</p>
+                                <p class="team-info">CEO</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="team-member">
+                                <img src="assets/img/team/2.png" alt="Member" class="team-image" />
+                                <h3 class="team-name">Muhammad Hisyam</h3>
+                                <p class="team-position">Chief Financial Officer</p>
+                                <p class="team-info">CFO</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="team-member">
+                                <img src="assets/img/team/3.png" alt="Member" class="team-image" />
+                                <h3 class="team-name">Muhammad Rafi H</h3>
+                                <p class="team-position">Chief Operating Officer</p>
+                                <p class="team-info">COO</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="team-member">
+                                <img src="assets/img/team/4.png" alt="Member" class="team-image" />
+                                <h3 class="team-name">Pramudita Ahmad</h3>
+                                <p class="team-position">Software Engineer</p>
+                                <p class="team-info">Additional info</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="team-member">
+                                <img src="assets/img/team/5.png" alt="Member" class="team-image" />
+                                <h3 class="team-name">Irfan</h3>
+                                <p class="team-position">Software Engineer</p>
+                                <p class="team-info">Additional info</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      <!-- 2 -->
-      <div>
-        <img src="assets/img/team/2.png" alt="Member" class="w-60 h-60 object-cover mx-auto" />
-        <h3 class="mt-4 text-lg font-semibold text-gray-800">Muhammad Hisyam</h3>
-        <p class="text-sm text-gray-500">Chief Financial Officer</p>
-        <p class="text-xs text-gray-400"> CFO</p>
-      </div>
+        <!-- Why choose us -->
+        <div class="why-choose-section ">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Why choose us</h2>
+                    <p class="section-subtitle">Enhance and Pioneer Using Technology Trends</p>
+                </div>
 
-      <!--  3 -->
-      <div>
-        <img src="assets/img/team/3.png" alt="Member" class="w-60 h-60 object-cover mx-auto" />
-        <h3 class="mt-4 text-lg font-semibold text-gray-800">Muhammad Rafi H</h3>
-        <p class="text-sm text-gray-500">Chief Operating Officer </p>
-        <p class="text-xs text-gray-400">COO</p>
-      </div>
+                <div class="features-grid">
+                    <div class="row g-3 g-sm-4">
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="feature-card h-100">
+                                <p class="feature-number">01</p>
+                                <h3 class="feature-title">Best price</h3>
+                                <p class="feature-description">
+                                    Stay entrepreneurial, fast and unbureaucratic, while utilizing the resources, broad competence and reach of a larger group, when needed.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="feature-card h-100">
+                                <p class="feature-number">02</p>
+                                <h3 class="feature-title">Dedicated team</h3>
+                                <p class="feature-description">
+                                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore quis nihil illo tenetur voluptate fugit explicabo provident molestias.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="feature-card h-100">
+                                <p class="feature-number">03</p>
+                                <h3 class="feature-title">24/7 Available For Contact</h3>
+                                <p class="feature-description">
+                                   Stay entrepreneurial, fast and unbureaucratic, while utilizing the resources, broad competence and reach of a larger group, when needed.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="feature-card h-100">
+                                <p class="feature-number">04</p>
+                                <h3 class="feature-title">99% Satisfaction</h3>
+                                <p class="feature-description">
+                                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore quis nihil illo tenetur voluptate fugit explicabo provident molestias.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-      <!-- 4 -->
-      <div>
-        <img src="assets/img/team/4.png" alt="Member" class="w-60 h-60 object-cover mx-auto" />
-        <h3 class="mt-4 text-lg font-semibold text-gray-800">Pramudita Ahmad</h3>
-        <p class="text-sm text-gray-500">Software Engineer</p>
-        <p class="text-xs text-gray-400">Additional info</p>
-      </div>
+                <div class="cta-section">
+                    <p class="cta-text">
+                        Simplify your business operations and consolidate your projects, clients and team into one integrated, easy-to-use platform.
+                    </p>
+                    <button class="cta-button" type="button">
+                        Get consultation
+                    </button>
+                </div>
+            </div>
+        </div>
 
-      <!--  5 -->
-      <div>
-        <img src="assets/img/team/5.png" alt="Member" class="w-60 h-60 object-cover mx-auto" />
-        <h3 class="mt-4 text-lg font-semibold text-gray-800">Irfan</h3>
-        <p class="text-sm text-gray-500">Software Engineer</p>
-        <p class="text-xs text-gray-400">Additional info</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- why choose us -->
-<div class="bg-white text-gray-800 font-sans">
-  <div class="max-w-7xl mx-auto px-6 py-16">
-    <div class="text-center max-w-xl mx-auto">
-      <h2 class="text-gray-900 font-semibold text-lg leading-6">Why choose us</h2>
-      <p class="text-gray-500 text-sm mt-1">Enhance and Pioneer Using Technology Trends</p>
-    </div>
-
-    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-      <div class="bg-gray-50 rounded-lg p-6">
-        <p class="text-xs text-gray-400 font-semibold mb-2">01</p>
-        <h3 class="text-gray-900 font-semibold text-sm mb-2">Best price</h3>
-        <p class="text-gray-500 text-xs leading-relaxed">
-          Stay entrepreneurial, fast and unbureaucratic, while utilizing the resources, broad competence and reach of a larger group, when needed.
-        </p>
-      </div>
-      <div class="bg-gray-50 rounded-lg p-6">
-        <p class="text-xs text-gray-400 font-semibold mb-2">02</p>
-        <h3 class="text-gray-900 font-semibold text-sm mb-2">Dedicated team</h3>
-        <p class="text-gray-500 text-xs leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore quis nihil illo tenetur voluptate fugit explicabo provident molestias.
-        </p>
-      </div>
-      <div class="bg-gray-50 rounded-lg p-6">
-        <p class="text-xs text-gray-400 font-semibold mb-2">03</p>
-        <h3 class="text-gray-900 font-semibold text-sm mb-2">24/7 Available For Contact</h3>
-        <p class="text-gray-500 text-xs leading-relaxed">
-          Stay entrepreneurial, fast and unbureaucratic, while utilizing the resources, broad competence and reach of a larger group, when needed.
-        </p>
-      </div>
-      <div class="bg-gray-50 rounded-lg p-6">
-        <p class="text-xs text-gray-400 font-semibold mb-2">04</p>
-        <h3 class="text-gray-900 font-semibold text-sm mb-2">99% Satisfaction</h3>
-        <p class="text-gray-500 text-xs leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore quis nihil illo tenetur voluptate fugit explicabo provident molestias.
-        </p>
-      </div>
-    </div>
-
-    <div class="mt-16 max-w-xl mx-auto text-center">
-      <p class="text-gray-900 text-sm font-normal leading-snug">
-        Simplify your business operations and consolidate your projects,<br> clients and team into one integrated, easy-to-use platform.
-      </p>
-      <button
-        class="mt-6 bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition"
-        type="button"
-      >
-        Get consultation
-      </button>
-    </div>
-  </div>
-
-   <!-- footer -->
-   <div id="footer-container"></div>
-   
-   <script src="js/components.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/preline@1.15.0/dist/preline.min.js"></script>
-</body>
+       <!-- Footer -->
+       <div id="footer-container"></div>
+       
+       <!-- Bootstrap JS -->
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+       <script src="js/components.js"></script>
+    </body>
 </html>
