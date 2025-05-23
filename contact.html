@@ -4,29 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Astacode</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
       .hero-section {
         position: relative;
         height: 200px;
         margin-top: 4rem;
       }
-      
+
       @media (min-width: 576px) {
         .hero-section {
           height: 250px;
           margin-top: 0;
         }
       }
-      
+
       @media (min-width: 768px) {
         .hero-section {
           height: 300px;
         }
       }
-      
+
       .hero-bg {
         position: absolute;
         inset: 0;
@@ -34,13 +40,13 @@
         height: 100%;
         object-fit: cover;
       }
-      
+
       .hero-overlay {
         position: absolute;
         inset: 0;
         background-color: rgba(0, 0, 0, 0.6);
       }
-      
+
       .hero-content {
         position: absolute;
         top: 50%;
@@ -50,53 +56,53 @@
         text-align: center;
         width: 100%;
       }
-      
+
       .hero-title {
         color: white;
         font-size: 1.5rem;
         font-weight: bold;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         margin-bottom: 0.5rem;
       }
-      
+
       @media (min-width: 576px) {
         .hero-title {
           font-size: 1.875rem;
         }
       }
-      
+
       @media (min-width: 768px) {
         .hero-title {
           font-size: 2.25rem;
         }
       }
-      
+
       .hero-subtitle {
         color: #e5e7eb;
         font-size: 0.875rem;
         font-weight: 500;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         max-width: 36rem;
         margin: 0 auto;
       }
-      
+
       @media (min-width: 576px) {
         .hero-subtitle {
           font-size: 1rem;
         }
       }
-      
+
       @media (min-width: 768px) {
         .hero-subtitle {
           font-size: 1.125rem;
         }
       }
-      
+
       .contact-section {
         background-color: #f8f9fa;
         padding: 2.5rem 0;
       }
-      
+
       .contact-card {
         background-color: white;
         padding: 1.5rem;
@@ -104,19 +110,19 @@
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         overflow: hidden;
       }
-      
+
       .contact-label {
         font-size: 0.875rem;
         color: #6b7280;
         font-weight: 500;
       }
-      
+
       .contact-value {
         color: #1f2937;
         font-weight: 600;
         margin-bottom: 0.5rem;
       }
-      
+
       .social-icon {
         background-color: #111827;
         width: 28px;
@@ -129,16 +135,16 @@
         margin-right: 0.75rem;
         transition: background-color 0.3s;
       }
-      
+
       .social-icon:hover {
         background-color: #374151;
       }
-      
+
       .social-icon i {
         color: white;
         font-size: 0.75rem;
       }
-      
+
       .map-container {
         position: relative;
         width: 100%;
@@ -146,7 +152,7 @@
         border-radius: 0.5rem;
         overflow: hidden;
       }
-      
+
       .map-iframe {
         position: absolute;
         inset: 0;
@@ -160,31 +166,40 @@
   <body>
     <div id="navbar-container"></div>
     <div class="hero-section">
-      <img
-        src="assets/img/bgcontact.jpg"
-        alt="Contact Us"
-        class="hero-bg"
-      />
+      <img src="assets/img/bgcontact.jpg" alt="Contact Us" class="hero-bg" />
       <div class="hero-overlay"></div>
       <div class="hero-content px-3 px-sm-4 px-md-5">
-        <h1 class="hero-title">
+        <h1 class="hero-title" data-aos="fade-right" data-aos-duration="1500">
           Contact Us
         </h1>
-        <p class="hero-subtitle">
+        <p
+          class="hero-subtitle"
+          data-aos="fade-right"
+          data-aos-duration="1500"
+          data-aos-delay="100"
+        >
           Get in touch and ask us anything
         </p>
       </div>
     </div>
 
     <!-- Contact Section -->
-    <section class="contact-section">
+    <section
+      class="contact-section"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
       <div class="container">
         <div class="row g-4">
           <!-- Contact Info -->
-          <div class="col-12 col-md-6">
+          <div
+            class="col-12 col-md-6"
+            data-aos="fade-right"
+            data-aos-duration="1500"
+          >
             <div class="contact-card">
               <h2 class="h5 fw-semibold mb-3">Call us</h2>
-              
+
               <p class="contact-label">Phone</p>
               <p class="contact-value">+62 822 4245 5535</p>
 
@@ -212,7 +227,11 @@
           </div>
 
           <!-- Google Maps -->
-          <div class="col-12 col-md-6">
+          <div
+            class="col-12 col-md-6"
+            data-aos="fade-left"
+            data-aos-duration="1500"
+          >
             <div class="contact-card">
               <div class="map-container">
                 <iframe
@@ -237,5 +256,12 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/components.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1500,
+        easing: "ease-in-out",
+      });
+    </script>
   </body>
 </html>
